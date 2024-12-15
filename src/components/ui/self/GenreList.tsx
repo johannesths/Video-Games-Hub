@@ -4,10 +4,11 @@ import { Box, Button, HStack, Image } from "@chakra-ui/react";
 import { SkeletonText } from "../skeleton";
 
 interface Props {
-  onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
+  onSelectGenre: (genre: Genre | null) => void;
 }
 
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const { data, isLoading } = useGenres();
   if (isLoading) {
     return (
@@ -28,9 +29,11 @@ const GenreList = ({ onSelectGenre }: Props) => {
                 src={getCroppedImageURL(genre.image_background)}
               />
               <Button
-                variant="outline"
+                variant={genre.id === selectedGenre?.id ? "solid" : "outline"}
                 width="80%"
-                onClick={() => onSelectGenre(genre)}
+                onClick={() =>
+                  onSelectGenre(selectedGenre?.id === genre.id ? null : genre)
+                }
               >
                 {genre.name}
               </Button>
