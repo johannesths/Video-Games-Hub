@@ -7,23 +7,42 @@ import {
 } from "@chakra-ui/react";
 import { HiSortAscending } from "react-icons/hi";
 
-interface Props {}
+interface Props {
+  onSelectSortOrder: (sortOrder: string) => void;
+  sortOrder: string;
+}
 
-const SortSelector = () => {
+const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
+  const sortOrders = [
+    { value: "", label: "Relevance" },
+    { value: "-added", label: "Date added" },
+    { value: "name", label: "Name" },
+    { value: "-released", label: "Release Date" },
+    { value: "metacritic", label: "Popularity" },
+    { value: "-rating", label: "Average Rating" },
+  ];
+
+  const currentSortOrder = sortOrders.find(
+    (order) => order.value === sortOrder
+  );
+
   return (
     <MenuRoot>
       <MenuTrigger asChild>
         <Button variant="outline" size="sm">
-          <HiSortAscending /> Sort by
+          <HiSortAscending /> Sort by {currentSortOrder?.label}
         </Button>
       </MenuTrigger>
       <MenuContent>
-        <MenuItem value="Relevance">Relevance</MenuItem>
-        <MenuItem value="Date added">Date added</MenuItem>
-        <MenuItem value="Name">Name</MenuItem>
-        <MenuItem value="Release Date">Release Date</MenuItem>
-        <MenuItem value="Average Rating">Average Rating</MenuItem>
-        <MenuItem value="Popularity">Popularity</MenuItem>
+        {sortOrders.map((order) => (
+          <MenuItem
+            onClick={() => onSelectSortOrder(order.value)}
+            key={order.value}
+            value={order.value}
+          >
+            {order.label}
+          </MenuItem>
+        ))}
       </MenuContent>
     </MenuRoot>
   );
