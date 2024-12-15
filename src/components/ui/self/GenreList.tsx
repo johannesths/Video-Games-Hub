@@ -20,8 +20,8 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   return (
     <Box as="ul" padding="8px">
       {data.map((genre) => (
-        <Box padding="5px">
-          <li key={genre.id}>
+        <Box padding="5px" key={genre.id}>
+          <li>
             <HStack>
               <Image
                 boxSize="32px"
