@@ -1,7 +1,6 @@
 import { Game } from "@/hooks/useGames";
-import { Card, Heading, HStack, Icon, Image } from "@chakra-ui/react";
+import { Card, Heading, HStack, Image } from "@chakra-ui/react";
 import PlatformIconList from "./self/PlatformIconList";
-import { FaWindows } from "react-icons/fa";
 import CriticScore from "./self/CriticScore";
 
 interface Props {
