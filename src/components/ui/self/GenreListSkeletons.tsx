@@ -1,0 +1,7 @@
+import { SkeletonText } from "../skeleton";
+
+const GenreListSkeleton = () => {
+  return <SkeletonText />;
+};
+
+export default GenreListSkeleton;
