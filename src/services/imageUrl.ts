@@ -1,5 +1,7 @@
 import noImage from "../assets/no-image-placeholder-6f3882e0.webp"
 
+// RAWG.io API provides functionality to crop images when fetching
+
 const getCroppedImageURL = (url: string) => {
     if (!url) return noImage;
     const index = url.indexOf('media/') + 'media/'.length;

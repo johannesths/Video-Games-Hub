@@ -2,6 +2,7 @@ import apiClient from "@/services/apiClient";
 import { AxiosRequestConfig, CanceledError } from "axios";
 import { useState, useEffect } from "react";
 
+// Generic Data Hook to fetch from the RAWG.io API
 
 interface FetchResponse<T> {
     count: number;
@@ -16,6 +17,7 @@ const useData = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?:
     useEffect(() => {
         const controller = new AbortController();
         setIsLoading(true);
+
       apiClient
         .get<FetchResponse<T>>(endpoint, { signal: controller.signal, ...requestConfig})
         .then((res) => {setData(res.data.results)

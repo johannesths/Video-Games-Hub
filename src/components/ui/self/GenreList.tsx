@@ -1,7 +1,9 @@
 import useGenres, { Genre } from "@/hooks/useGenres";
 import getCroppedImageURL from "@/services/imageUrl";
-import { Box, Button, HStack, Image } from "@chakra-ui/react";
+import { Box, Button, Heading, HStack, Image } from "@chakra-ui/react";
 import { SkeletonText } from "../skeleton";
+
+// List of genres shown on the left, also used to filter genres
 
 interface Props {
   selectedGenre: Genre | null;
@@ -10,6 +12,7 @@ interface Props {
 
 const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const { data, isLoading } = useGenres();
+
   if (isLoading) {
     return (
       <Box as="ul" padding="8px">
@@ -17,8 +20,12 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
       </Box>
     );
   }
+
   return (
     <Box as="ul" padding="8px">
+      <Heading size="3xl" textAlign="center">
+        Genres
+      </Heading>
       {data.map((genre) => (
         <Box padding="5px" key={genre.id}>
           <li>
@@ -26,6 +33,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
               <Image
                 boxSize="32px"
                 borderRadius={8}
+                objectFit="cover"
                 src={getCroppedImageURL(genre.image_background)}
               />
               <Button

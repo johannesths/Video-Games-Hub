@@ -29,7 +29,7 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
   return (
     <MenuRoot>
       <MenuTrigger asChild>
-        <Button variant="outline" size="sm">
+        <Button variant="outline" size="lg">
           <HiSortAscending /> Sort by {currentSortOrder?.label}
         </Button>
       </MenuTrigger>

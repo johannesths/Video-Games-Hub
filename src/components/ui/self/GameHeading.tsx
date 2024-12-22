@@ -1,6 +1,9 @@
 import { GameQuery } from "@/App";
 import { Heading } from "@chakra-ui/react";
 
+/* Heading above the game card grid that changes based on 
+  filtering options */
+
 interface Props {
   gameQuery: GameQuery;
 }
@@ -10,7 +13,7 @@ const GameHeading = ({ gameQuery }: Props) => {
     gameQuery.genre?.name || ""
   } Games`;
   return (
-    <Heading as="h1" marginY={5} marginX={5}>
+    <Heading size="5xl" marginY={5} marginX={5}>
       {heading}
     </Heading>
   );
