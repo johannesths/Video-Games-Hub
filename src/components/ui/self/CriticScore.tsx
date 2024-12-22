@@ -1,5 +1,8 @@
 import { Badge } from "@chakra-ui/react";
 
+/* Critic score from fetch are shown as a colored badge on game card
+  color is based on the number of the score */
+
 interface Props {
   score: number;
 }

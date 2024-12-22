@@ -1,6 +1,8 @@
 import { GameQuery } from "@/App";
 import useData from "./useData";
 
+/* Utelizes generic data hook (useData) to fetch games from RAWG API */
+
 export interface Platform {
     id: number;
     name: string;

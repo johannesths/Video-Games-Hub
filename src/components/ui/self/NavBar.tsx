@@ -3,6 +3,8 @@ import logo from "../../../assets/logo.webp";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
+// NavBar including logo, search bar and color mode switch
+
 interface Props {
   onSearch: (searchText: string) => void;
 }

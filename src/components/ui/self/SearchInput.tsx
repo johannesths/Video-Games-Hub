@@ -9,6 +9,7 @@ interface Props {
 
 const SearchInput = ({ onSearch }: Props) => {
   const ref = useRef<HTMLInputElement>(null);
+
   return (
     <form
       onSubmit={(event) => {
@@ -21,6 +22,8 @@ const SearchInput = ({ onSearch }: Props) => {
           ref={ref}
           borderRadius={20}
           placeholder="Search Games..."
+          size="xl"
+          width="700px"
         ></Input>
       </InputGroup>
     </form>
