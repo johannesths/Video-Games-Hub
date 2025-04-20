@@ -1,3 +1,10 @@
+/**
+ * PlatformIconList.tsx
+ *
+ * A list of the most popular platforms, displayed as icons.
+ * Only available platforms are shown on the game gard, see props.
+ */
+
 import {
   FaWindows,
   FaApple,
@@ -12,8 +19,6 @@ import { Platform } from "@/hooks/useGames";
 import { BsGlobe } from "react-icons/bs";
 import { HStack, Icon } from "@chakra-ui/react";
 import { IconType } from "react-icons";
-
-/* Platform icons to show in game card */
 
 interface Props {
   platforms: Platform[];

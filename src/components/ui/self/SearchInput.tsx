@@ -1,3 +1,9 @@
+/**
+ * SearchInput.tsx
+ *
+ * Used for the search field in the NavBar.
+ */
+
 import { Input } from "@chakra-ui/react";
 import { InputGroup } from "../input-group";
 import { LuSearch } from "react-icons/lu";

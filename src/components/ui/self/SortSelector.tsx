@@ -1,3 +1,9 @@
+/**
+ * SortSelector.tsx
+ *
+ * Displays a menu to sort games after certain criterias.
+ */
+
 import {
   Button,
   MenuContent,
@@ -13,6 +19,7 @@ interface Props {
 }
 
 const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
+  // Criteria with values for the API call
   const sortOrders = [
     { value: "", label: "Relevance" },
     { value: "-added", label: "Date added" },

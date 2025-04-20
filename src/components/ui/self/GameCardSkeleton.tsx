@@ -1,7 +1,11 @@
+/**
+ * GameCardSkeleton.tsx
+ *
+ * Loading skeletons that match the size of the actual game cards.
+ */
+
 import { Card, Skeleton } from "@chakra-ui/react";
 import { SkeletonText } from "../skeleton";
-
-/* Loading Skeletons that match size of actual game cards */
 
 const GameCardSkeleton = () => {
   return (

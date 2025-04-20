@@ -1,6 +1,10 @@
-import { SkeletonText } from "../skeleton";
+/**
+ * GenreListSkeleton.tsx
+ *
+ * Self explanatory. Text skeleton.
+ */
 
-// Skeletons shown when Genre List is loading
+import { SkeletonText } from "../skeleton";
 
 const GenreListSkeleton = () => {
   return <SkeletonText />;

@@ -1,9 +1,12 @@
+/**
+ * ColorModeSwitch.tsx
+ *
+ * Simple switch to change the color mode between light and dark.
+ */
+
 import { Box, HStack } from "@chakra-ui/react";
 import { useColorMode } from "../color-mode";
 import { Switch } from "@/components/ui/switch";
-
-// Switch to toggle color mode (dark/light)
-// Displayed on the far right of the navbar
 
 const ColorModeSwitch = () => {
   const { colorMode, toggleColorMode } = useColorMode();
