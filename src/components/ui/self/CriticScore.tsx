@@ -1,13 +1,18 @@
-import { Badge } from "@chakra-ui/react";
+/**
+ * CriticScore.tsx
+ *
+ * Displays the critic score fetched in the rawg.io request as a number
+ * with a color background (green, yellow, red) depending on score.
+ */
 
-/* Critic score from fetch are shown as a colored badge on game card
-  color is based on the number of the score */
+import { Badge } from "@chakra-ui/react";
 
 interface Props {
   score: number;
 }
 
 const CriticScore = ({ score }: Props) => {
+  // Determine background color
   let color = score >= 75 ? "green" : score > 50 ? "yellow" : "red";
   return (
     <Badge

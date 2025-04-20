@@ -1,8 +1,12 @@
+/**
+ * GameHeading.tsx
+ *
+ * Heading above the game card grid that changes based on
+ * filtering options.
+ */
+
 import { GameQuery } from "@/App";
 import { Heading } from "@chakra-ui/react";
-
-/* Heading above the game card grid that changes based on 
-  filtering options */
 
 interface Props {
   gameQuery: GameQuery;

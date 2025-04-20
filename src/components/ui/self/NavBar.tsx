@@ -1,9 +1,13 @@
+/**
+ * NavBar.tsx
+ *
+ * Simple NavBar including logo, search bar and color mode switch.
+ */
+
 import { HStack, Image } from "@chakra-ui/react";
 import logo from "../../../assets/logo.webp";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
-
-// NavBar including logo, search bar and color mode switch
 
 interface Props {
   onSearch: (searchText: string) => void;

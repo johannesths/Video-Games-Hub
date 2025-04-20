@@ -1,9 +1,13 @@
+/**
+ * GenreList.tsx
+ *
+ * Displays a list of genres to select and filter genres.
+ */
+
 import useGenres, { Genre } from "@/hooks/useGenres";
 import getCroppedImageURL from "@/services/imageUrl";
 import { Box, Button, Heading, HStack, Image } from "@chakra-ui/react";
 import { SkeletonText } from "../skeleton";
-
-// List of genres shown on the left, also used to filter genres
 
 interface Props {
   selectedGenre: Genre | null;
@@ -13,6 +17,7 @@ interface Props {
 const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const { data, isLoading } = useGenres();
 
+  // Return skeletons when loading
   if (isLoading) {
     return (
       <Box as="ul" padding="8px">
@@ -30,12 +35,14 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
         <Box padding="5px" key={genre.id}>
           <li>
             <HStack>
+              {/* Genre image */}
               <Image
                 boxSize="32px"
                 borderRadius={8}
                 objectFit="cover"
                 src={getCroppedImageURL(genre.image_background)}
               />
+              {/* Genre */}
               <Button
                 variant={genre.id === selectedGenre?.id ? "solid" : "outline"}
                 width="80%"

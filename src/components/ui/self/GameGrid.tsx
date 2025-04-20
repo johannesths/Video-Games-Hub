@@ -1,7 +1,13 @@
+/**
+ * GameGrid.tsx
+ *
+ * Displays the game cards in a grid.
+ */
+
 import useGames from "@/hooks/useGames";
 import { SimpleGrid, Text } from "@chakra-ui/react";
 import GameCard from "./GameCard";
-import GameCardSkeleton from "./self/GameCardSkeleton";
+import GameCardSkeleton from "./GameCardSkeleton";
 import { GameQuery } from "@/App";
 
 interface Props {
@@ -20,6 +26,7 @@ const GameGrid = ({ gameQuery }: Props) => {
         gap="20px"
         padding="25px"
       >
+        {/* Shows skeletons while loading */}
         {isLoading && skeletons.map((skel) => <GameCardSkeleton key={skel} />)}
         {data.map((game) => (
           <GameCard key={game.id} game={game}></GameCard>

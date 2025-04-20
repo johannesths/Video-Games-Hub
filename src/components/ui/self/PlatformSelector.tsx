@@ -1,3 +1,10 @@
+/**
+ * PlatformSelecter.tsx
+ *
+ * Menu to filter platforms that games are available on.
+ * Updates the game query.
+ */
+
 import { Platform } from "@/hooks/useGames";
 import usePlatforms from "@/hooks/usePlatforms";
 import {
@@ -8,10 +15,6 @@ import {
   MenuTrigger,
 } from "@chakra-ui/react";
 import { HiSortAscending } from "react-icons/hi";
-
-/* Menu to filter platforms
-  updates GameQuery
- */
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;
@@ -30,6 +33,7 @@ const PlatformSelecter = ({ onSelectPlatform, selectedPlatform }: Props) => {
           {selectedPlatform ? selectedPlatform.name : "Platforms"}
         </Button>
       </MenuTrigger>
+      {/* Platforms */}
       <MenuContent>
         {data.map((platform) => (
           <MenuItem
